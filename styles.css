@@ -26,7 +26,7 @@ button {
     background-color: #ffffff;
     color: #007bff;
     border: 1px solid #ddd;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 0.25rem;
     border-radius: 3px;
     cursor: pointer;
@@ -57,6 +57,7 @@ button:hover {
     margin: 0.5rem 0;
 }
 
+/* Стилі для модального вікна */
 .modal {
     display: none; /* Сховати модальне вікно за замовчуванням */
     position: fixed;
@@ -66,7 +67,6 @@ button:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
     padding-top: 60px;
 }
@@ -76,7 +76,7 @@ button:hover {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 90%;
     max-width: 500px;
     border-radius: 5px;
 }
@@ -109,13 +109,53 @@ textarea {
     height: 150px;
 }
 
-@media (max-width: 600px) {
+/* Медіа-запити для адаптивності */
+@media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
     }
 
     button {
         font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .note {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .note h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.7rem;
+    }
+
+    .note {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .note h2 {
+        font-size: 0.9rem;
+    }
+
+    textarea {
+        height: 100px;
     }
 }
