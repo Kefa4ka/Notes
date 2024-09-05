@@ -1,43 +1,33 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Записник Нотаток</title>
+    <title>Записник</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Записник Нотаток</h1>
-        <div class="note-form">
-            <label for="note-title">Назва нотатки:</label>
-            <input type="text" id="note-title">
-            <br>
-            <label for="note-content">Вміст нотатки:</label>
-            <textarea id="note-content"></textarea>
-            <br>
-            <label for="note-tags">Теги (через кому):</label>
-            <input type="text" id="note-tags">
-            <br>
-            <button class="add-note" onclick="addNote()">Додати нотатку</button>
+    <header>
+        <h1>Мій Записник</h1>
+        <button id="addNoteBtn">➕</button>
+    </header>
+    <main>
+        <section id="notes">
+            <!-- Нотатки будуть тут -->
+        </section>
+    </main>
+
+    <!-- Модальне вікно для створення/редагування нотаток -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Додати нотатку</h2>
+            <input type="text" id="noteTitle" placeholder="Заголовок">
+            <textarea id="noteContent" placeholder="Вміст нотатки"></textarea>
+            <button id="saveNoteBtn">Зберегти</button>
         </div>
-        <div class="file-upload">
-            <input type="file" id="fileInput" accept=".txt">
-            <button class="load-file" onclick="loadFile()">Завантажити нотатку</button>
-        </div>
-        <div class="search">
-            <input type="text" id="search-input" placeholder="Пошук нотаток" oninput="searchNotes()">
-        </div>
-        <ul id="notes-list"></ul>
-        <div class="export-buttons">
-            <button class="export-all" onclick="exportAllNotes()">Експортувати всі нотатки</button>
-            <button class="export-selected" onclick="exportSelectedNotes()">Експортувати вибрані нотатки</button>
-        </div>
-        <label>
-            Темна тема:
-            <input type="checkbox" id="theme-toggle">
-        </label>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
